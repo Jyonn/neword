@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+}
+div.title-box {
+  margin-top: 50px;
+  white-space: nowrap;
+}
+div.pinyin-box {
+  margin-top: 10px;
+}
+div.content-box {
+  margin-top: 20px;
+}
+div.content-box div.desc {
+  margin-top: 20px;
+  height: calc(100vh - 330px);
+}
+div.content-box div.desc[contenteditable]:empty:before {
+  content: attr(placeholder);
+}
+/*# sourceMappingURL=architecture.css.map */

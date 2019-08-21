@@ -1,0 +1,115 @@
+@box-size: 40px;
+@border-width: 1px;
+@sqrt2: 1.4142;
+@sub-box-size: (@box-size + @border-width) / 2;
+@skew-box-size: @box-size * @sqrt2;
+@trans-dist: @box-size / 2 - @border-width / 2 / @sqrt2;
+@border-color: red;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 0;
+}
+
+input, textarea, div {
+  outline: none;
+  border: none;
+  background: none;
+  resize: none;
+}
+
+div.cross-box {
+  position: relative;
+  width: @box-size - @border-width;
+  height: @box-size;
+  overflow: hidden;
+  display: inline-block;
+  div.square {
+    position: absolute;
+    height: @sub-box-size;
+    border: @border-width solid @border-color;
+    border-right: none;
+    width: @sub-box-size - @border-width;
+  }
+  div.square.top {
+    top: 0;
+  }
+  div.square.bottom {
+    bottom: 0;
+  }
+  div.square.left {
+    left: 0;
+  }
+  div.square.right {
+    right: 0;
+  }
+  div.sub-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: @box-size;
+    height: @box-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div.skew-box {
+    position: absolute;
+    width: @skew-box-size;
+    height: @skew-box-size;
+  }
+  div.skew-box.top-left {
+    border-left: @border-width dashed @border-color;
+    transform: translate(@trans-dist, @trans-dist) rotate(45deg);
+  }
+  div.skew-box.bottom-right {
+    border-bottom: @border-width dashed @border-color;
+    transform: translate(@trans-dist, -@trans-dist) rotate(45deg);
+  }
+  div.text {
+    font-size: @box-size * 0.8;
+    font-family: STKaiti, KaiTi, STXingkai, "Xingkai SC", HYKaiti, "FZKai-Z03S", serif;
+    font-weight: bold;
+  }
+
+  &:last-child {
+    width: @box-size;
+    div.square.right {
+      border-right: @border-width solid @border-color;
+      width: @sub-box-size;
+    }
+  }
+}
+
+@input-box-height: 30px;
+
+input.input-box {
+  width: 100%;
+  height: @input-box-height;
+  border-radius: @input-box-height / 2;
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 0 @input-box-height / 2;
+}
+
+div.pinyin-box {
+  font-size: 20px;
+  font-family: "Songti TC", "Songti SC", STSong, serif;
+}
+
+div.content-box {
+  div.title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "PingFang SC", "PingFang TC", "Heiti SC", "Heiti TC", STHeiti, serif;
+  }
+  div.desc {
+    font-size: 14px;
+    font-family: STFangsong, serif;
+    div {
+      font-size: 14px;
+    }
+  }
+}

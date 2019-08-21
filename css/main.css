@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 0;
+}
+input,
+textarea,
+div {
+  outline: none;
+  border: none;
+  background: none;
+  resize: none;
+}
+div.cross-box {
+  position: relative;
+  width: 39px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+}
+div.cross-box div.square {
+  position: absolute;
+  height: 20.5px;
+  border: 1px solid red;
+  border-right: none;
+  width: 19.5px;
+}
+div.cross-box div.square.top {
+  top: 0;
+}
+div.cross-box div.square.bottom {
+  bottom: 0;
+}
+div.cross-box div.square.left {
+  left: 0;
+}
+div.cross-box div.square.right {
+  right: 0;
+}
+div.cross-box div.sub-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.cross-box div.skew-box {
+  position: absolute;
+  width: 56.568px;
+  height: 56.568px;
+}
+div.cross-box div.skew-box.top-left {
+  border-left: 1px dashed red;
+  transform: translate(19.64644322px, 19.64644322px) rotate(45deg);
+}
+div.cross-box div.skew-box.bottom-right {
+  border-bottom: 1px dashed red;
+  transform: translate(19.64644322px, -19.64644322px) rotate(45deg);
+}
+div.cross-box div.text {
+  font-size: 32px;
+  font-family: STKaiti, KaiTi, STXingkai, "Xingkai SC", HYKaiti, "FZKai-Z03S", serif;
+  font-weight: bold;
+}
+div.cross-box:last-child {
+  width: 40px;
+}
+div.cross-box:last-child div.square.right {
+  border-right: 1px solid red;
+  width: 20.5px;
+}
+input.input-box {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 0 15px;
+}
+div.pinyin-box {
+  font-size: 20px;
+  font-family: "Songti TC", "Songti SC", STSong, serif;
+}
+div.content-box div.title {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "PingFang SC", "PingFang TC", "Heiti SC", "Heiti TC", STHeiti, serif;
+}
+div.content-box div.desc {
+  font-size: 14px;
+  font-family: STFangsong, serif;
+}
+div.content-box div.desc div {
+  font-size: 14px;
+}
+/*# sourceMappingURL=main.css.map */
